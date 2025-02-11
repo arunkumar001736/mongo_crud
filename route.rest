@@ -1,0 +1,32 @@
+
+GET http://localhost:6969/movies/
+
+
+
+
+### Using dynamic authentication
+@username = CAL_TEST_API_USER
+@password = Cal@123
+@base64Auth = {{username}}:{{password}} | base64
+
+POST http://localhost:54778/api/RM_RetrieveRequest
+Content-Type: application/json
+Authorization: Basic {{base64Auth}}
+
+{
+    "body": {
+        "type": "",
+        "data": [
+            {
+                "TokenNo": "103",
+                "ReservationNo": "345",
+                "ReturnableGateNo": "ABC",
+                "ItemNo": "10",
+                "ItemCode": "678289",
+                "BatchNo": " A16UNS",
+                "Quantity": "100",
+                "UOM": "Nos"
+            }
+        ]
+    }
+}
