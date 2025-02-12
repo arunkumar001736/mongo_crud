@@ -29,8 +29,8 @@ export const MovieCreate = async (req, res) => {
   try {
     const movie = await Movie.create({
       title: req.body.title,
-      desc: req.body.desc,
-      director: req.body.director,
+      desc: req.body.desc
+      // director: req.body.director,
     });
     return res.status(201).json(movie);
   } catch (error) {
